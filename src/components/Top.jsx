@@ -2,7 +2,7 @@
 
 const Top = () => {
   return (
-    <div className='lg:px-20 flex justify-between items-center lg:h-[5rem] lg:w-full cursor-default'>
+    <div className='lg:px-20 flex justify-between items-center h-[5rem] lg:w-full cursor-default'>
       <aside>
         <h1>Dancers4Life</h1>
       </aside>
