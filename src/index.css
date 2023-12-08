@@ -14,7 +14,7 @@ html {
 }
 
 .TopImgContainer {
-  background-image: url('./assets/dancing-img-top2.jpg');
+  background-image: url('https://cdn.jsdelivr.net/gh/Azeem-py/Dancers4Life/src/assets/dancing-img-top2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }

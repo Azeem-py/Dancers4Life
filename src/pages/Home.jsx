@@ -2,9 +2,9 @@ import WhatWedo from '../components/WhatWedo'
 
 const Home = () => {
   return (
-    <div className='h-[calc(100vh-5rem)] text-defaultText overflow-auto'>
-      <section className='grid lg:grid-cols-2  w-full h-full bg-[#FE9F0D]'>
-        <div className='px-5 flex flex-col justify-center gap-3'>
+    <div className='h-[calc(100vh-5rem)] w-full text-defaultText overflow-y-auto'>
+      <section className='lg:grid lg:grid-cols-2 grid- flex flex-col lg:w-full h-full bg-[#FE9F0D]'>
+        <div className='px-5 flex flex-col flex-wrap justify-center gap-3'>
           <h2 className='text-9xl font-bold mb-3 mt-14 drop-shadow-md'>
             Dance?
           </h2>
@@ -16,7 +16,7 @@ const Home = () => {
         </div>
         <div className='TopImgContainer'></div>
       </section>
-      <WhatWedo />
+      {/* <WhatWedo /> */}
     </div>
   )
 }
