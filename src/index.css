@@ -18,3 +18,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 } */
+
+.enrollBtn {
+  @apply border-2 px-5 py-3 rounded-md bg-[#660000] text-[#c0c0c0] font-semibold drop-shadow-md my-3 transition-transform transform hover:scale-105;
+}
