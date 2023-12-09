@@ -22,3 +22,7 @@ html {
 .enrollBtn {
   @apply border-2 px-5 py-3 rounded-md bg-[#660000] text-[#c0c0c0] font-semibold drop-shadow-md my-3 transition-transform transform hover:scale-105;
 }
+
+.authBtn {
+  @apply rounded-md px-2 py-1 text-xl font-bold drop-shadow-lg cursor-pointer;
+}

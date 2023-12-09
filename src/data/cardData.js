@@ -74,7 +74,7 @@ export const eventCards = [
   {
     title: 'Summer Dance Intensive: Immerse Yourself in Motion',
     type: 'Event',
-    description: 'Week-long dance program: classes, workshops, showcase.',
+    description: 'Week-long dance program: classes, workshops, showcase. ',
     img: 'https://cdn.jsdelivr.net/gh/Azeem-py/Dancers4Life/src/assets/danceIntensive.jpg',
   },
 ]
