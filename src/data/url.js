@@ -1,2 +1,1 @@
-export const baseURL =
-  'http://ec2-54-185-119-62.us-west-2.compute.amazonaws.com:8080'
+export const baseURL = 'https://ec1e-54-185-119-62.ngrok-free.app'
