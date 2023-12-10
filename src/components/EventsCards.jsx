@@ -3,21 +3,28 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { baseURL } from '../data/global'
+import { cacheEventData } from './dataCache'
+import { useNavigate } from 'react-router-dom'
 
 const EventsCards = () => {
+  const navigate = useNavigate()
   const [eventCards, setEventCards] = useState([])
   const [load, setLoad] = useState(false)
   useEffect(() => {
     !load &&
       axios
-        .get(`${baseURL}/events/`)
+        .get(`${baseURL}/event-data/1`)
         .then((resp) => {
           console.log(resp)
           setEventCards(resp.data)
           setLoad(true)
         })
         .catch((err) => console.log(err))
-  })
+  }, [])
+  const handleClick = (id) => {
+    cacheEventData(id, eventCards)
+    navigate('/ticket')
+  }
   return (
     <div>
       <main>
@@ -34,7 +41,7 @@ const EventsCards = () => {
           {eventCards.map((card, index) => {
             return (
               <div
-                className='lg:col-span-3 col-span-12 bg-[rgb(192,192,192)] rounded-md shadow-xl h-[30rem]'
+                className='xl:col-span-3 lg:col-span-4 md:col-span-6 col-span-12 bg-[rgb(192,192,192)] rounded-md shadow-xl h-[30rem]'
                 key={index}
               >
                 <header className='h-[60%]'>
@@ -52,7 +59,12 @@ const EventsCards = () => {
                     className='lg:text-lg'
                     dangerouslySetInnerHTML={{ __html: card.slogan }}
                   ></p>
-                  <button className='enrollBtn'>Buy Ticket</button>
+                  <button
+                    className='enrollBtn'
+                    onClick={() => handleClick(card.id)}
+                  >
+                    Buy Ticket
+                  </button>
                 </main>
               </div>
             )

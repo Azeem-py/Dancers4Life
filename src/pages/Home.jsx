@@ -1,6 +1,11 @@
 import WhatWedo from '../components/WhatWedo'
+import { useEffect } from 'react'
 
 const Home = () => {
+  useEffect(() => {
+    localStorage.removeItem('currentClass')
+    localStorage.removeItem('currentEvent')
+  }, [])
   return (
     <div className='h-[calc(100vh-5rem)] w-[100vw] text-defaultText overflow-y-auto '>
       <section className='h-full w-full flex lg:flex-row flex-col bg-[#FE9F0D]'>
@@ -22,6 +27,10 @@ const Home = () => {
         </div>
       </section>
       <WhatWedo />
+      <footer className='w-full h-[3rem] flex items-center justify-around bg-[#C0C0C0] font-semibold text-lg'>
+        <p>Privacy Policy</p>
+        <p>Copyright 2023</p>
+      </footer>
     </div>
   )
 }

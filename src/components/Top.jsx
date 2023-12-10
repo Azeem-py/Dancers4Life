@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 import { RiMenu3Line } from 'react-icons/ri'
 import { IoClose } from 'react-icons/io5'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { AuthState } from '../data/global'
 
 const Top = () => {
+  const navigate = useNavigate()
+  const { isAuth } = useContext(AuthState)
   const [showMenu, setShowMenu] = useState(false)
 
   const navStyle =
@@ -17,9 +20,11 @@ const Top = () => {
   const link = 'hover:border-b-4 hover:border-[#660000] p-2 rounded'
 
   return (
-    <div className='lg:px-20 px-5 flex justify-between items-center h-[5rem] w-full cursor-default'>
+    <div className='lg:px-20 px-5 flex justify-between items-center h-[5rem] w-full cursor-default shadow-md'>
       <aside className=''>
-        <h1>Dancers4Life</h1>
+        <h1 className='font-andika font-bold text-3xl drop-shadow-xl text-[#FF8C00]'>
+          <span className='text-bloodRed'>Dancers</span>4Life
+        </h1>
       </aside>
       {/* {showIcon && <RiMenu3Line />} */}
       <span
@@ -48,7 +53,7 @@ const Top = () => {
           </li>
           <li>
             <NavLink
-              to='parties-event'
+              to='events'
               className={({ isActive }) => (isActive ? active : link)}
             >
               Parties and Events
@@ -56,10 +61,22 @@ const Top = () => {
           </li>
         </ul>
 
-        <ul className='flex space-x-2'>
-          <li className='bg-[#fe9f0d] text-richBlack authBtn'>Login</li>
-          <li className='border-2 border-[#fe9f0d] authBtn'>Sign Up</li>
-        </ul>
+        {!isAuth && (
+          <ul className='flex space-x-2'>
+            <li
+              className='bg-[#fe9f0d] text-richBlack authBtn'
+              onClick={() => navigate('/login')}
+            >
+              Login
+            </li>
+            <li
+              className='border-2 border-[#fe9f0d] authBtn'
+              onClick={() => navigate('/signup')}
+            >
+              Sign Up
+            </li>
+          </ul>
+        )}
       </nav>
     </div>
   )

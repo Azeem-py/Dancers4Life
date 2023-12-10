@@ -1,12 +1,17 @@
 import { Outlet } from 'react-router-dom'
 import Top from '../components/Top'
+import { useState, useContext } from 'react'
+import { AuthState } from '../data/global'
 
 const SharedLayout = () => {
+  const [isAuth, setIsAuth] = useState(false)
   return (
-    <div>
-      <Top />
-      <Outlet />
-    </div>
+    <AuthState.Provider value={{ isAuth, setIsAuth }}>
+      <div>
+        <Top />
+        <Outlet />
+      </div>
+    </AuthState.Provider>
   )
 }
 

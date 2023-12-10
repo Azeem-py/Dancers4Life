@@ -26,3 +26,17 @@ html {
 .authBtn {
   @apply rounded-md px-2 py-1 text-xl font-bold drop-shadow-lg cursor-pointer;
 }
+
+.input-label {
+  @apply flex flex-col;
+}
+.input-label span {
+  @apply text-xl text-defaultText mb-2 font-andika;
+}
+.input {
+  @apply border-2 rounded px-2 py-3 text-lg outline-none;
+}
+
+.formBtn {
+  @apply px-2 py-3 bg-[#fe9f0d] text-3xl rounded shadow-md outline-none;
+}
