@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { baseURL } from '../data/global'
 import axios from 'axios'
+import { baseURL } from '../data/url'
 import { formatDate } from '../functions/dataFormatter'
 import { cacheClassData } from '../components/dataCache'
 import { useNavigate } from 'react-router-dom'

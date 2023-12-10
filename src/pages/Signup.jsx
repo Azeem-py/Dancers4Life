@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { baseURL } from '../data/global'
+import { baseURL } from '../data/url'
 import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {

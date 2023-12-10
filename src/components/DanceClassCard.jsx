@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
-import { baseURL } from '../data/global'
+import { baseURL } from '../data/url'
 import { cacheClassData } from './dataCache'
 import { useNavigate } from 'react-router-dom'
 
@@ -40,7 +40,7 @@ const DanceClassCard = () => {
             danceCards.map((card, index) => {
               return (
                 <div
-                  className='xl:col-span-3 lg:col-span-4 col-span-12 bg-[rgb(192,192,192)] rounded-md shadow-xl h-[30rem]'
+                  className='2xl:col-span-3 lg:col-span-4 col-span-12 bg-[rgb(192,192,192)] rounded-md shadow-xl h-[30rem]'
                   key={index}
                 >
                   <header className='h-[60%]'>

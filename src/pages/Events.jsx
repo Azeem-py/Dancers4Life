@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { baseURL } from '../data/global'
+import { baseURL } from '../data/url'
 import axios from 'axios'
 import { formatDate } from '../functions/dataFormatter'
 import { cacheEventData } from '../components/dataCache'

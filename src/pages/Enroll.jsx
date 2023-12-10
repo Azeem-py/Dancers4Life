@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { formatDate } from '../functions/dataFormatter'
 import axios from 'axios'
-import { baseURL } from '../data/global'
+import { baseURL } from '../data/url'
 import { useNavigate } from 'react-router-dom'
 
 const Enroll = () => {

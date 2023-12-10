@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect, useContext } from 'react'
-import { baseURL } from '../data/global'
+import { baseURL } from '../data/url'
 import { useNavigate } from 'react-router-dom'
 import { validateEmail } from '../functions/validateEmail'
 import { AuthState } from '../data/global'

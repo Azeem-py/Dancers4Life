@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { formatDate } from '../functions/dataFormatter'
 import { validateEmail } from '../functions/validateEmail'
 import axios from 'axios'
-import { baseURL } from '../data/global'
+import { baseURL } from '../data/url'
 import { useNavigate } from 'react-router-dom'
 
 const Ticket = () => {

@@ -1,14 +1,25 @@
 import { useState, useContext } from 'react'
-
 import { RiMenu3Line } from 'react-icons/ri'
 import { IoClose } from 'react-icons/io5'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { AuthState } from '../data/global'
+import { baseURL } from '../data/url'
+import axios from 'axios'
 
 const Top = () => {
   const navigate = useNavigate()
-  const { isAuth } = useContext(AuthState)
+  const { isAuth, setIsAuth } = useContext(AuthState)
   const [showMenu, setShowMenu] = useState(false)
+
+  const handleLogOut = () => {
+    const token = localStorage.getItem('token')
+    axios.get(`${baseURL}/auth/logout`, {
+      headers: { Authorization: `Token ${token}` },
+    })
+    localStorage.removeItem('user')
+    localStorage.removeItem('token')
+    setIsAuth(false)
+  }
 
   const navStyle =
     'hidden lg:flex items-center justify-around lg:text-xl font-semibold text-defaultText tracking-[0.02rem]  w-[70vw]'
@@ -61,7 +72,7 @@ const Top = () => {
           </li>
         </ul>
 
-        {!isAuth && (
+        {!isAuth ? (
           <ul className='flex space-x-2'>
             <li
               className='bg-[#fe9f0d] text-richBlack authBtn'
@@ -74,6 +85,15 @@ const Top = () => {
               onClick={() => navigate('/signup')}
             >
               Sign Up
+            </li>
+          </ul>
+        ) : (
+          <ul className='flex space-x-2 px-5 w-full md:w-auto'>
+            <li
+              className='bg-[#fe9f0d] text-richBlack authBtn'
+              onClick={handleLogOut}
+            >
+              Logout
             </li>
           </ul>
         )}

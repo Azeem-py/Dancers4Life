@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { baseURL } from '../data/global'
+import { baseURL } from '../data/url'
 import { cacheEventData } from './dataCache'
 import { useNavigate } from 'react-router-dom'
 
@@ -41,7 +41,7 @@ const EventsCards = () => {
           {eventCards.map((card, index) => {
             return (
               <div
-                className='xl:col-span-3 lg:col-span-4 md:col-span-6 col-span-12 bg-[rgb(192,192,192)] rounded-md shadow-xl h-[30rem]'
+                className='2xl:col-span-3 lg:col-span-4 md:col-span-6 col-span-12 bg-[rgb(192,192,192)] rounded-md shadow-xl h-[30rem]'
                 key={index}
               >
                 <header className='h-[60%]'>

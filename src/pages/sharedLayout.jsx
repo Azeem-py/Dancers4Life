@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import Top from '../components/Top'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { AuthState } from '../data/global'
 
 const SharedLayout = () => {
